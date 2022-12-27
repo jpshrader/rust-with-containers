@@ -1,4 +1,4 @@
 fn main() {
-    let name = "VS Code Remote - Containers";
+    let name = "Rust with containers";
     println!("Hello, {}!", name);
 }
