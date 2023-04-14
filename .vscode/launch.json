@@ -8,8 +8,8 @@
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=hello_remote_world",
-                    "--package=hello_remote_world",
+                    "--bin=rust_with_containers",
+                    "--package=rust_with_containers",
                     "--manifest-path=Cargo.toml"
                 ],
                 "filter": {
