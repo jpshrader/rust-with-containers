@@ -4,9 +4,6 @@ version = "0.1.0"
 authors = ["jpshrader"]
 edition = "2018"
 
-[lib]
-path ="./src/lib/lib.rs"
-
 [dependencies]
 serde = { version = "1.0.144", features = ["derive"] }
 serde_json = "1.0.85"
