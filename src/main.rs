@@ -1,9 +1,11 @@
-mod helpers;
+mod name_fetcher;
+mod number_filter;
+pub mod number_filter_test;
 
 fn main() {
     println!("what is your name?: ");
 
-    match helpers::get_name() {
+    match name_fetcher::get_name() {
         Ok(name) => println!("hello, {}!", name),
         Err(e) => println!("error: {}", e),
     }
@@ -18,18 +20,8 @@ fn main() {
     println!("iter even numbers: {:?}", even_numbers);
     println!("iter odd numbers: {:?}", odd_numbers);
 
-    let even_nums = get_numbers(&numbers, |n| n % 2 == 0);
-    let odd_nums = get_numbers(&numbers, |n| n % 2 != 0);
+    let even_nums = number_filter::filter(&numbers, |n| n % 2 == 0);
+    let odd_nums = number_filter::filter(&numbers, |n| n % 2 != 0);
     println!("even numbers: {:?}", even_nums);
     println!("odd numbers: {:?}", odd_nums);
-}
-
-fn get_numbers(input_numbers: &Vec<i32>, predicate: fn(i32) -> bool) -> Vec<i32> {
-    let mut result = Vec::new();
-    for n in input_numbers {
-        if predicate(*n) {
-            result.push(*n);
-        }
-    }
-    result
 }
