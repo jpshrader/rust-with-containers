@@ -1,5 +1,6 @@
 mod name_fetcher;
 mod number_filter;
+
 pub mod number_filter_test;
 
 fn main() {
