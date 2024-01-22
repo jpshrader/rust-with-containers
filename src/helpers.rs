@@ -5,13 +5,11 @@ pub fn get_name() -> Result<String, io::Error> {
     match io::stdin().read_line(&mut input) {
         Ok(n) => {
             if n == 0 {
-                return Err(io::Error::new(io::ErrorKind::Other, "No input"));
+                return Err(io::Error::new(io::ErrorKind::Other, "no input"));
             }
             let name = input.trim().to_string();
-            return Ok(name);
+            Ok(name)
         }
-        Err(_) => {
-            return Err(io::Error::new(io::ErrorKind::Other, "Error reading name"));
-        }
+        Err(_) => Err(io::Error::new(io::ErrorKind::Other, "error reading name")),
     }
 }
